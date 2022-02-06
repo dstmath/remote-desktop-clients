@@ -210,7 +210,7 @@ class StateKeeper: NSObject, ObservableObject, KeyboardObserving, NSCoding {
             //print("Firing off a recurring partial screen update request")
             sendWholeScreenUpdateRequest(self.cl[self.currInst], true)
             UserInterface {
-                self.rescheduleScreenUpdateRequest(timeInterval: 20, fullScreenUpdate: false, recurring: true)
+                self.rescheduleScreenUpdateRequest(timeInterval: Double(self.localizedString(for: "REFRESH_FRAME_RATE")) ?? 20, fullScreenUpdate: false, recurring: true)
             }
         }
     }
